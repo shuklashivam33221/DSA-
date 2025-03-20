@@ -1,20 +1,14 @@
-class Solution
-{
-public:
-    bool containsDuplicate(vector<int> &nums)
-    {
-        set<int> st;
-        for (int i = 0; i < nums.size(); i++)
-        {
-            if (st.count(nums[i]) == 1)
+//217. Contains Duplicate
+class Solution {
+    public:
+        bool containsDuplicate(vector<int>& nums) {
+            int d = nums.size();
+            sort(nums.begin(),nums.end());
+            for (int i = 1; i<d; i++)
             {
-                return true;
-            }
-            else
-            {
-                st.insert(nums[i]);
-            }
+                if (nums[i]==nums[i-1]) return true;
+            }  
+            return false;
         }
-        return false;
-    }
-};
+    };
+    

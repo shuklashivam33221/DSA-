@@ -1,13 +1,12 @@
-class Solution
-{
-public:
-    vector<int> getConcatenation(vector<int> &nums)
-    {
-        int n = nums.size();
-        for (int i = 0; i < n; i++)
-        {
-            nums.emplace_back(nums[i]);
+//1929. Concatenation of Array
+class Solution {
+    public:
+        vector<int> getConcatenation(vector<int>& nums) {
+            int d = nums.size();
+            for (int i = 0; i<d; i++)
+            {
+                nums.push_back(nums[i]);
+            }
+            return nums;
         }
-        return nums;
-    }
-};
+    };
